@@ -1,6 +1,6 @@
 # BEAUTY N BEAT
 
-Bài tập lớn môn Hệ thống và Công nghệ Web · Đề tài 03: Website giới thiệu và bán mỹ phẩm trực tuyến · Nhóm 6 thành viên (A–F).
+Bài tập môn Hệ thống và Công nghệ Web · Đề tài 03: Website giới thiệu và bán mỹ phẩm trực tuyến · Nhóm 6 thành viên (A–F).
 
 Website tham khảo bố cục của Hasaki (header, thanh menu, card sản phẩm, khu khuyến mãi) nhưng dùng tên và giao diện riêng, không sao chép nguyên mẫu.
 
@@ -30,7 +30,7 @@ Mỗi người **chỉ sửa file của mình**. Cần sửa file của người
 2. Mở repo, bấm nút chọn branch (đang ghi `main`), chọn **branch của mình** trong bảng trên.
 3. Bấm **Add file → Upload files**, kéo các file của mình vào, giữ đúng thư mục (ví dụ `home.css` phải nằm trong `assets/css/`).
 4. Ghi một dòng mô tả ngắn ở ô Commit (ví dụ "B: xong carousel trang chủ"), bấm **Commit changes**.
-5. Làm xong thì bấm **Pull request** về `main` và nhắn A. A kiểm tra rồi mới merge.
+5. Làm xong thì bấm **Pull request** về `main`.
 
 **Không làm:** commit thẳng vào `main`, upload file không phải của mình, đổi tên hoặc di chuyển file và thư mục chung.
 
@@ -69,7 +69,6 @@ Thứ tự nạp quan trọng, sai thứ tự là lỗi hay gặp nhất. Thay `
 </body>
 ```
 
-Header và footer do A làm, các trang dùng chung, không tự sao chép thành bản khác.
 
 ## Màu sắc
 
