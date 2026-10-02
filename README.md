@@ -1,6 +1,6 @@
 # BEAUTY N BEAT
 
-Bài tập môn Hệ thống và Công nghệ Web · Đề tài 03: Website giới thiệu và bán mỹ phẩm trực tuyến · Nhóm 6 thành viên (A–F).
+Bài tập lớn môn Hệ thống và Công nghệ Web · Đề tài 03: Website giới thiệu và bán mỹ phẩm trực tuyến · Nhóm 6 thành viên (A–F).
 
 Website tham khảo bố cục của Hasaki (header, thanh menu, card sản phẩm, khu khuyến mãi) nhưng dùng tên và giao diện riêng, không sao chép nguyên mẫu.
 
@@ -13,26 +13,42 @@ Không dùng cơ sở dữ liệu, không có backend. Đăng nhập và thanh t
 
 ## Phân công
 
-| Người | Trang | File riêng | Branch |
-|---|---|---|---|
-| A | about, sitemap + layout chung, tích hợp | `common.css`, `common.js`, `assets/vendor/` | `feature/A-common` |
-| B | index, search | `home.css`, `home.js` | `feature/B-home-search` |
-| C | products, product-detail | `product.css`, `product.js`, `assets/data/products.js` | `feature/C-product` |
-| D | cart, checkout | `cart.css`, `cart.js` | `feature/D-cart-checkout` |
-| E | login, register | `account.css`, `account.js` | `feature/E-account` |
-| F | news, news-detail | `news.css`, `news.js`, `assets/data/news.js` | `feature/F-news` |
+| Người | Trang | File riêng |
+|---|---|---|
+| A | about, sitemap + layout chung, tích hợp | `common.css`, `common.js`, `assets/vendor/` |
+| B | index, search | `home.css`, `home.js` |
+| C | products, product-detail | `product.css`, `product.js`, `assets/data/products.js` |
+| D | cart, checkout | `cart.css`, `cart.js` |
+| E | login, register | `account.css`, `account.js` |
+| F | news, news-detail | `news.css`, `news.js`, `assets/data/news.js` |
 
 Mỗi người **chỉ sửa file của mình**. Cần sửa file của người khác thì nhắn người đó (hoặc A với file chung) trước.
 
-## Cách nộp bài lên GitHub (không cần cài Git)
+## Cách làm và nộp bài
 
-1. Đăng nhập GitHub bằng tài khoản đã được A mời vào repo.
-2. Mở repo, bấm nút chọn branch (đang ghi `main`), chọn **branch của mình** trong bảng trên.
-3. Bấm **Add file → Upload files**, kéo các file của mình vào, giữ đúng thư mục (ví dụ `home.css` phải nằm trong `assets/css/`).
-4. Ghi một dòng mô tả ngắn ở ô Commit (ví dụ "B: xong carousel trang chủ"), bấm **Commit changes**.
-5. Làm xong thì bấm **Pull request** về `main`.
+Thành viên B–F **không cần dùng Git**. Quy trình:
 
-**Không làm:** commit thẳng vào `main`, upload file không phải của mình, đổi tên hoặc di chuyển file và thư mục chung.
+1. **Tải code về:** vào trang repo trên GitHub, bấm nút xanh **Code → Download ZIP**, giải nén ra máy.
+2. **Làm bài:** mở cả thư mục bằng VS Code, chỉ sửa các file được giao cho mình (xem bảng phân công). Mở trang bằng trình duyệt để thử.
+3. **Nộp bài:** gom các file của mình, **giữ đúng tên thư mục**, nén thành một file ZIP đặt tên theo mẫu `B_home-search.zip` (chữ cái của mình + tên phần việc). Upload vào thư mục Drive của nhóm: **[DÁN LINK DRIVE Ở ĐÂY]**.
+4. **Báo cho A** qua nhóm chat là đã nộp, kèm một dòng ghi đã làm gì.
+5. **A kiểm tra, ghép các phần và đưa lên GitHub.** Khi A cập nhật, thành viên tải lại ZIP mới nếu cần làm tiếp.
+
+Ví dụ B nộp, trong file ZIP chỉ có:
+
+```
+index.html
+search.html
+assets/css/home.css
+assets/js/home.js
+assets/img/banners/banner-1.jpg
+```
+
+**Không làm:** nộp cả thư mục dự án, nộp file không phải của mình, đổi tên hoặc di chuyển file và thư mục chung, sửa `common.css`/`common.js` khi chưa báo A.
+
+**Hạn nộp:** [GHI NGÀY GIỜ]. Nộp trễ làm A không kịp ghép và kiểm tra.
+
+**Thứ tự nên nộp:** C và F nộp file dữ liệu (`products.js`, `news.js`) **sớm nhất**, vì B và D cần để chạy thử. Sau đó B, D, E, rồi A ghép cuối.
 
 ## Cấu trúc thư mục
 
@@ -45,8 +61,16 @@ beautynbeat/
     ├── css/      common.css + css riêng của từng người
     ├── js/       common.js + js riêng của từng người
     ├── data/     products.js, news.js
-    └── vendor/   bootstrap/, jquery/ (đã tải sẵn, dùng local)
+    ├── img/
+    │   ├── banners/    ảnh banner trang chủ (B)
+    │   ├── logo/       logo (A)
+    │   ├── members/    ảnh thành viên cho trang about (A)
+    │   ├── news/       ảnh bài Cẩm nang (F)
+    │   └── products/   ảnh sản phẩm (C)
+    └── vendor/   bootstrap/, jquery/ (dùng local)
 ```
+
+Ảnh bỏ đúng thư mục của mình, đặt tên không dấu, không khoảng trắng (ví dụ `serum-vitamin-c.jpg`).
 
 ## Khung mọi trang phải theo
 
@@ -69,6 +93,7 @@ Thứ tự nạp quan trọng, sai thứ tự là lỗi hay gặp nhất. Thay `
 </body>
 ```
 
+Header và footer do A làm, các trang dùng chung, không tự sao chép thành bản khác.
 
 ## Màu sắc
 
