@@ -26,7 +26,7 @@ Không sử dụng cơ sở dữ liệu.
 
 ## Phân công
 
-| Thành viên | Phụ trách | Branch | Trạng thái |
+| Thành viên | Phụ trách | Branch |
 |---|---|---|---|
 | A | About, Sitemap, layout chung, tích hợp | feature/A-common |
 | B | Home, Search | feature/B-home-search |
