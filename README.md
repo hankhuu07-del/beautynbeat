@@ -1,6 +1,6 @@
 # BEAUTY N BEAT
 
-Bài tập lớn môn Hệ thống và Công nghệ Web · Đề tài 03: Website giới thiệu và bán mỹ phẩm trực tuyến · Nhóm 6 thành viên (A–F).
+Bài tập môn Hệ thống và Công nghệ Web · Đề tài 03: Website giới thiệu và bán mỹ phẩm trực tuyến · Nhóm 6 thành viên (A–F).
 
 Website tham khảo bố cục của Hasaki (header, thanh menu, card sản phẩm, khu khuyến mãi) nhưng dùng tên và giao diện riêng, không sao chép nguyên mẫu.
 
@@ -26,8 +26,6 @@ Mỗi người **chỉ sửa file của mình**. Cần sửa file của người
 
 ## Cách làm và nộp bài
 
-Thành viên B–F **không cần dùng Git**. Quy trình:
-
 1. **Tải code về:** vào trang repo trên GitHub, bấm nút xanh **Code → Download ZIP**, giải nén ra máy.
 2. **Làm bài:** mở cả thư mục bằng VS Code, chỉ sửa các file được giao cho mình (xem bảng phân công). Mở trang bằng trình duyệt để thử.
 3. **Nộp bài:** gom các file của mình, **giữ đúng tên thư mục**, nén thành một file ZIP đặt tên theo mẫu `B_home-search.zip` (chữ cái của mình + tên phần việc). Upload vào thư mục Drive của nhóm: **[DÁN LINK DRIVE Ở ĐÂY]**.
@@ -44,9 +42,9 @@ assets/js/home.js
 assets/img/banners/banner-1.jpg
 ```
 
-**Không làm:** nộp cả thư mục dự án, nộp file không phải của mình, đổi tên hoặc di chuyển file và thư mục chung, sửa `common.css`/`common.js` khi chưa báo A.
+**Làm ơn đừng có làm:** nộp cả thư mục dự án, nộp file không phải của mình, đổi tên hoặc di chuyển file và thư mục chung, sửa `common.css`/`common.js` khi chưa báo A.
 
-**Hạn nộp:** [GHI NGÀY GIỜ]. Nộp trễ làm A không kịp ghép và kiểm tra.
+**Hạn nộp:** [7 giờ tối ngày 9 tháng 10 năm 2026  ].
 
 **Thứ tự nên nộp:** C và F nộp file dữ liệu (`products.js`, `news.js`) **sớm nhất**, vì B và D cần để chạy thử. Sau đó B, D, E, rồi A ghép cuối.
 
