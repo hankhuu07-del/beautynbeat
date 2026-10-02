@@ -28,12 +28,12 @@ Không sử dụng cơ sở dữ liệu.
 
 | Thành viên | Phụ trách | Branch | Trạng thái |
 |---|---|---|---|
-| A | About, Sitemap, layout chung, tích hợp | feature/A-common | Đang chuẩn bị |
-| B | Home, Search | feature/B-home-search | Chưa bắt đầu |
-| C | Products, Product Detail | feature/C-product | Chưa bắt đầu |
-| D | Cart, Checkout | feature/D-cart-checkout | Chưa bắt đầu |
-| E | Login, Register | feature/E-account | Chưa bắt đầu |
-| F | News, News Detail | feature/F-news | Chưa bắt đầu |
+| A | About, Sitemap, layout chung, tích hợp | feature/A-common |
+| B | Home, Search | feature/B-home-search |
+| C | Products, Product Detail | feature/C-product |
+| D | Cart, Checkout | feature/D-cart-checkout |
+| E | Login, Register | feature/E-account |
+| F | News, News Detail | feature/F-news |
 
 ---
 
@@ -70,15 +70,17 @@ Không sử dụng cơ sở dữ liệu.
 
 Các key thống nhất:
 
-- products
-- news
-- users
-- currentUser
-- cart
-- orders
-- selectedProductId
-- selectedNewsId
-- searchKeyword
+| Key | Dùng để làm gì |
+|---|---|
+| `products` | lưu danh sách sản phẩm |
+| `news` | lưu danh sách tin tức |
+| `users` | lưu các tài khoản đã đăng ký |
+| `currentUser` | người đang đăng nhập |
+| `cart` | giỏ hàng hiện tại |
+| `orders` | các đơn hàng đã tạo |
+| `selectedProductId` | sản phẩm vừa được chọn để mở trang chi tiết |
+| `selectedNewsId` | bài tin vừa được chọn |
+| `searchKeyword` | từ khóa tìm kiếm |
 
 ---
 
