@@ -1,12 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>BEAUTY N BEAT</h1>
-    <p>Bài tập lớn Hệ thống và Công nghệ Web - Website bán mỹ phẩm.</p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty N Beat - Mỹ phẩm chính hãng & Chăm sóc đẹp</title>
+  
+  <!-- 1. Bootstrap CSS local -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <!-- 2. Common CSS chung (A quản lý) -->
+  <link rel="stylesheet" href="assets/css/common.css">
+  <!-- 3. CSS riêng của B -->
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <!-- A tự vẽ qua common.js, B chỉ để thẻ rỗng -->
+  <header id="site-header"></header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="container my-3">
+
+    <!-- Flash Deal Header Bar + Countdown (Đã xóa ô tìm kiếm phụ) -->
+    <div class="flash-deal-header d-flex align-items-center justify-content-between p-2 mb-2 rounded-top">
+      <div class="d-flex align-items-center gap-3">
+        <h4 class="m-0 fw-bold text-uppercase flash-title">⚡ FLASH DEAL</h4>
+        <div class="countdown-box d-flex align-items-center gap-1">
+          <span class="text-white small me-1">Kết thúc trong</span>
+          <span class="badge bg-dark" id="cd-hours">00</span> :
+          <span class="badge bg-dark" id="cd-mins">00</span> :
+          <span class="badge bg-dark" id="cd-secs">00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Banner + Side Deals -->
+    <section class="hero-hasaki-layout mb-4">
+      <div class="row g-2">
+        <!-- Carousel Banner chính -->
+        <div class="col-12 col-lg-7">
+          <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner h-100 rounded">
+              <div class="carousel-item active h-100">
+                <!-- Đã thay ảnh placeholder bằng ảnh local -->
+                <img src="assets/img/banners/banner-1.jpg" class="d-block w-100 object-fit-cover" alt="Khuyến mãi đặc biệt">
+              </div>
+              <div class="carousel-item h-100">
+                <img src="assets/img/banners/banner-2.jpg" class="d-block w-100 object-fit-cover" alt="Sản phẩm mới">
+              </div>
+              <div class="carousel-item h-100">
+                <img src="assets/img/banners/banner-3.jpg" class="d-block w-100 object-fit-cover" alt="Flash Sale">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Trước</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Sau</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Side Deals (3 sản phẩm hot) -->
+        <div class="col-12 col-lg-5">
+          <div class="row g-2" id="heroSideDeals">
+            <!-- Render bằng JS từ PRODUCTS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Time Slots Section -->
+    <section class="time-slots-section mb-3">
+      <div class="row g-0 text-center time-slots-container rounded overflow-hidden">
+        <div class="col-4 time-slot-item active py-2">
+          <div class="fw-bold fs-5">00:00</div>
+          <div class="small">Đang diễn ra</div>
+        </div>
+        <div class="col-4 time-slot-item py-2">
+          <div class="fw-bold fs-5">12:00</div>
+          <div class="small">Sắp diễn ra</div>
+        </div>
+        <div class="col-4 time-slot-item py-2">
+          <div class="fw-bold fs-5">20:00</div>
+          <div class="small">Sắp diễn ra</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Tabs -->
+    <section class="category-tabs-section mb-4">
+      <div class="d-flex gap-2 overflow-auto pb-2" id="categoryTabList">
+        <button class="btn btn-tab active px-3 py-2 text-nowrap" data-cat="all">Tất Cả</button>
+        <button class="btn btn-tab px-3 py-2 text-nowrap" data-cat="skincare">Chăm Sóc Da</button>
+        <button class="btn btn-tab px-3 py-2 text-nowrap" data-cat="makeup">Trang Điểm</button>
+        <button class="btn btn-tab px-3 py-2 text-nowrap" data-cat="body">Chăm Sóc Cơ Thể</button>
+        <button class="btn btn-tab px-3 py-2 text-nowrap" data-cat="hair">Chăm Sóc Tóc</button>
+      </div>
+    </section>
+
+    <!-- Featured Products Grid -->
+    <section class="products-grid-section mb-5">
+      <div class="row g-2 g-md-3" id="featuredProductsContainer">
+        <!-- Render bằng JS -->
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-highlight-section mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+        <h4 class="section-title m-0 fw-bold text-uppercase">✨ Cẩm Nang Làm Đẹp</h4>
+        <a href="news.html" class="text-decoration-none text-primary-custom fw-bold small">
+          Xem thêm bài viết &raquo;
+        </a>
+      </div>
+      <div class="row g-3" id="featuredNewsContainer">
+        <!-- Render bằng JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="site-footer"></footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Sửa tên file jQuery thành 3.7.1 theo yêu cầu của A -->
+  <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script> 
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/data/products.js"></script>
+  <script src="assets/data/news.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
 </html>

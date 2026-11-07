@@ -2,10 +2,161 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Giới thiệu | Beauty N Beat</title>
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
   </head>
   <body>
-    <h1>Giới thiệu</h1>
+    <header id="site-header"></header>
+    <main class="container py-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Giới thiệu</li>
+        </ol>
+      </nav>
+
+      <h1 class="page-heading mb-4">Giới thiệu Beauty N Beat</h1>
+
+      <section class="mb-5">
+        <h2 class="section-heading">Về Beauty N Beat</h2>
+        <p>
+          Beauty N Beat là website giới thiệu và bán mỹ phẩm trực tuyến do nhóm
+          mình làm cho bài tập lớn môn
+          <strong>Hệ thống và Công nghệ Web</strong>. Tên gọi muốn nói đến việc
+          chăm sóc vẻ đẹp theo "nhịp" của mỗi người: nhẹ nhàng, đều đặn và dễ
+          duy trì.
+        </p>
+        <p>
+          Website có bốn nhóm sản phẩm:
+          <a href="products.html?category=skincare">Skincare</a>,
+          <a href="products.html?category=makeup">Makeup</a>,
+          <a href="products.html?category=body">Body</a>,
+          <a href="products.html?category=hair">Hair</a>, cùng khu
+          <a href="news.html">Cẩm nang làm đẹp</a> chia sẻ mẹo chăm sóc da,
+          trang điểm, cơ thể và tóc.
+        </p>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="section-heading">Website có gì?</h2>
+        <div class="row g-3">
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+              <h3 class="h6 fw-bold">Mua sắm</h3>
+              <p class="mb-0">
+                Xem danh sách, lọc, sắp xếp, xem chi tiết sản phẩm, thêm vào giỏ
+                hàng và đặt hàng (không thanh toán thật).
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+              <h3 class="h6 fw-bold">Tìm kiếm</h3>
+              <p class="mb-0">
+                Tìm theo tên, thương hiệu hoặc danh mục ngay từ ô tìm kiếm trên
+                đầu mỗi trang.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+              <h3 class="h6 fw-bold">Tài khoản</h3>
+              <p class="mb-0">
+                Đăng ký và đăng nhập, dữ liệu lưu bằng LocalStorage của trình
+                duyệt.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+              <h3 class="h6 fw-bold">Cẩm nang làm đẹp</h3>
+              <p class="mb-0">
+                Bài viết theo chủ đề, có lọc, tìm kiếm và bài liên quan.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+              <h3 class="h6 fw-bold">Dùng được trên mọi màn hình</h3>
+              <p class="mb-0">
+                Giao diện tự co giãn trên máy tính, máy tính bảng và điện thoại.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card">
+              <h3 class="h6 fw-bold">Không cần máy chủ</h3>
+              <p class="mb-0">
+                Chỉ dùng HTML, CSS, Bootstrap 5.3, JavaScript, jQuery 3.7.1 (lưu
+                sẵn trong thư mục dự án), mảng/đối tượng và LocalStorage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="section-heading">Thành viên nhóm</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered bg-white align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Thành viên</th>
+                <th scope="col">Họ tên</th>
+                <th scope="col">Phụ trách</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>Khưu Đại Hãn</td>
+                <td>
+                  Giới thiệu, sơ đồ website, giao diện chung (common.css,
+                  common.js), Bootstrap/jQuery, ghép bài
+                </td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td>Thúy Quỳnh</td>
+                <td>Trang chủ, tìm kiếm</td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>Ngọc Uyên</td>
+                <td>Danh sách sản phẩm, chi tiết sản phẩm, dữ liệu sản phẩm</td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>Nguyễn Bảo</td>
+                <td>Giỏ hàng, thanh toán</td>
+              </tr>
+              <tr>
+                <td>E</td>
+                <td>Lê Anh Chiến</td>
+                <td>Đăng nhập, đăng ký</td>
+              </tr>
+              <tr>
+                <td>F</td>
+                <td>Hà Vy</td>
+                <td>
+                  Cẩm nang làm đẹp (danh sách, chi tiết bài viết, dữ liệu bài
+                  viết)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/common.js"></script>
   </body>
 </html>

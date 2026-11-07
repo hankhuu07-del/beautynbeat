@@ -1,11 +1,255 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng nhập | Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>Đăng nhập</h1>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng nhập - BEAUTY N BEAT</title>
+
+    <!-- Bootstrap: phải load trước common.css -->
+    <link rel="stylesheet"
+        href="assets/vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- CSS chung của website -->
+    <link rel="stylesheet"
+        href="assets/css/common.css">
+
+    <!-- CSS riêng của phần E -->
+    <link rel="stylesheet"
+        href="assets/css/account.css">
+</head>
+
+<body>
+
+    <!-- Header dùng chung của website -->
+    <header id="site-header"></header>
+
+    <main class="account-page">
+
+        <div class="account-container row g-0">
+
+            <!-- Khu vực giới thiệu -->
+            <section class="account-intro col-md-6">
+
+                <div class="account-intro-content">
+
+                    <span class="account-badge">
+                        BEAUTY N BEAT
+                    </span>
+
+                    <h1>
+                        Chào mừng bạn<br>
+                        trở lại!
+                    </h1>
+
+                    <p>
+                        Đăng nhập để khám phá những sản phẩm
+                        làm đẹp phù hợp dành riêng cho bạn.
+                    </p>
+
+                    <div class="account-intro-features">
+
+                        <div class="intro-feature">
+                            <span class="intro-feature-icon">✦</span>
+                            <span>Sản phẩm làm đẹp đa dạng</span>
+                        </div>
+
+                        <div class="intro-feature">
+                            <span class="intro-feature-icon">♡</span>
+                            <span>Trải nghiệm mua sắm tiện lợi</span>
+                        </div>
+
+                        <div class="intro-feature">
+                            <span class="intro-feature-icon">✓</span>
+                            <span>Đồng hành cùng vẻ đẹp của bạn</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Form đăng nhập -->
+            <section class="account-form-section col-md-6">
+
+                <div class="account-form-card">
+
+                    <div class="account-form-header">
+
+                        <span class="account-form-label">
+                            TÀI KHOẢN
+                        </span>
+
+                        <h2>Đăng nhập</h2>
+
+                        <p>
+                            Đăng nhập để tiếp tục mua sắm
+                        </p>
+
+                    </div>
+
+
+                    <!-- Thông báo -->
+                    <div id="loginMessage"
+                        class="account-message"
+                        role="alert"
+                        aria-live="polite">
+                    </div>
+
+
+                    <form id="loginForm" novalidate>
+
+                        <!-- Email / Số điện thoại -->
+                        <div class="form-group">
+
+                            <label for="loginAccount">
+                                Email hoặc số điện thoại
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">◎</span>
+
+                                <input
+                                    type="text"
+                                    id="loginAccount"
+                                    name="loginAccount"
+                                    class="account-input"
+                                    placeholder="Nhập email hoặc số điện thoại"
+                                    autocomplete="username"
+                                    aria-describedby="loginAccountError"
+                                    maxlength="100">
+
+                            </div>
+
+                            <small
+                                id="loginAccountError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mật khẩu -->
+                        <div class="form-group">
+
+                            <div class="form-label-row">
+
+                                <label for="loginPassword">
+                                    Mật khẩu
+                                    <span class="required">*</span>
+                                </label>
+
+                                <button
+                                    type="button"
+                                    class="forgot-password"
+                                    id="forgotPasswordBtn">
+                                    Quên mật khẩu?
+                                </button>
+
+                            </div>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">◆</span>
+
+                                <input
+                                    type="password"
+                                    id="loginPassword"
+                                    name="loginPassword"
+                                    class="account-input"
+                                    placeholder="Nhập mật khẩu"
+                                    autocomplete="current-password"
+                                    aria-describedby="loginPasswordError"
+                                    maxlength="100">
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="loginPassword"
+                                    aria-label="Hiện mật khẩu">
+                                    Hiện
+                                </button>
+
+                            </div>
+
+                            <small
+                                id="loginPasswordError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Ghi nhớ -->
+                        <div class="login-options">
+
+                            <label class="remember-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberLogin">
+
+                                <span class="custom-checkbox"></span>
+
+                                <span>
+                                    Ghi nhớ đăng nhập
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Button -->
+                        <button
+                            type="submit"
+                            class="account-submit-btn">
+                            ĐĂNG NHẬP
+                        </button>
+
+
+                        <!-- Đăng ký -->
+                        <div class="account-switch">
+
+                            <span>
+                                Chưa có tài khoản?
+                            </span>
+
+                            <a href="register.html">
+                                Đăng ký ngay
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer dùng chung -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- JavaScript -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS chung -->
+    <script src="assets/js/common.js"></script>
+
+    <!-- JS riêng của phần E -->
+    <script src="assets/js/account.js"></script>
+
+</body>
+
 </html>

@@ -2,10 +2,93 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sitemap | Beauty N Beat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sơ đồ website | Beauty N Beat</title>
+    <link
+      rel="stylesheet"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/common.css" />
   </head>
   <body>
-    <h1>Sitemap</h1>
+    <header id="site-header"></header>
+    <main class="container py-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Sơ đồ website
+          </li>
+        </ol>
+      </nav>
+
+      <h1 class="page-heading mb-3">Sơ đồ website</h1>
+      <p>Beauty N Beat có 12 trang. Bấm vào tên trang để đi tới trang đó.</p>
+
+      <div class="row g-4 sitemap-list">
+        <div class="col-md-6">
+          <div class="info-card">
+            <h2 class="section-heading">Mua sắm</h2>
+            <ul>
+              <li><a href="index.html">Trang chủ</a> (index.html)</li>
+              <li>
+                <a href="products.html">Sản phẩm</a> (products.html)
+                <ul>
+                  <li>
+                    <a href="products.html?category=skincare">Skincare</a>
+                  </li>
+                  <li><a href="products.html?category=makeup">Makeup</a></li>
+                  <li><a href="products.html?category=body">Body</a></li>
+                  <li><a href="products.html?category=hair">Hair</a></li>
+                  <li>
+                    <a href="product-detail.html?id=1">Chi tiết sản phẩm</a>
+                    (product-detail.html, ví dụ sản phẩm số 1)
+                  </li>
+                </ul>
+              </li>
+              <li><a href="search.html">Tìm kiếm</a> (search.html)</li>
+              <li>
+                <a href="cart.html">Giỏ hàng</a> (cart.html)
+                <ul>
+                  <li><a href="checkout.html">Đặt hàng</a> (checkout.html)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-card">
+            <h2 class="section-heading">Thông tin và tài khoản</h2>
+            <ul>
+              <li>
+                <a href="news.html">Cẩm nang làm đẹp</a> (news.html)
+                <ul>
+                  <li>
+                    <a href="news-detail.html?id=lam-sach-da"
+                      >Chi tiết bài viết</a
+                    >
+                    (news-detail.html, ví dụ một bài)
+                  </li>
+                </ul>
+              </li>
+              <li><a href="about.html">Giới thiệu</a> (about.html)</li>
+              <li><a href="sitemap.html">Sơ đồ website</a> (sitemap.html)</li>
+              <li>
+                Tài khoản
+                <ul>
+                  <li><a href="login.html">Đăng nhập</a> (login.html)</li>
+                  <li><a href="register.html">Đăng ký</a> (register.html)</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/common.js"></script>
   </body>
 </html>

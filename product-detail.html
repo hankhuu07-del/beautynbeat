@@ -1,11 +1,144 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết sản phẩm | Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>Chi tiết sản phẩm</h1>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiết sản phẩm | Beauty N Beat</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="bnb-detail py-4">
+    <div class="container">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-3">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Sản phẩm</a></li>
+          <li class="breadcrumb-item" id="crumbCategory"></li>
+          <li class="breadcrumb-item active" aria-current="page" id="crumbName"></li>
+        </ol>
+      </nav>
+
+      <div id="notFound" class="bnb-empty text-center py-5 d-none">
+        <p class="fw-semibold mb-1">Không tìm thấy sản phẩm</p>
+        <p class="text-muted small mb-3">Sản phẩm có thể đã ngừng bán hoặc đường dẫn không đúng.</p>
+        <a href="products.html" class="btn btn-sm bnb-btn">Xem tất cả sản phẩm</a>
+      </div>
+
+      <div id="detailBox" class="d-none">
+        <div class="row g-4 g-lg-5">
+          <div class="col-md-5">
+            <div class="bnb-gallery">
+              <div class="bnb-detail-img">
+                <span class="bnb-badge-sale d-none" id="dSaleBadge"></span>
+                <img id="dImage" alt="">
+                <button type="button" class="bnb-gallery-nav prev" id="galleryPrev" aria-label="Ảnh trước">‹</button>
+                <button type="button" class="bnb-gallery-nav next" id="galleryNext" aria-label="Ảnh sau">›</button>
+              </div>
+              <div class="bnb-thumbs mt-2" id="dThumbs"></div>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <p class="bnb-brand mb-1" id="dBrand"></p>
+            <h1 class="bnb-detail-name" id="dName"></h1>
+            <p class="small text-muted mb-3">Mã sản phẩm: <span id="dId"></span> | Phân loại: <a href="products.html" id="dCategory"></a></p>
+
+            <div class="bnb-detail-price mb-3">
+              <span class="bnb-price" id="dPrice"></span>
+              <span class="bnb-old-price" id="dOldPrice"></span>
+            </div>
+
+            <p class="mb-3" id="dStock"></p>
+
+            <div class="d-flex flex-wrap align-items-center gap-3 mb-2">
+              <div class="bnb-qty" role="group" aria-label="Chọn số lượng">
+                <button type="button" id="qtyMinus" aria-label="Giảm số lượng">−</button>
+                <input type="text" id="qtyInput" value="1" inputmode="numeric" aria-label="Số lượng">
+                <button type="button" id="qtyPlus" aria-label="Tăng số lượng">+</button>
+              </div>
+              <small class="text-danger" id="qtyError"></small>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <button type="button" class="btn bnb-btn-outline px-4" id="btnAddCart">Thêm vào giỏ</button>
+              <button type="button" class="btn bnb-btn px-4" id="btnBuyNow">Mua ngay</button>
+            </div>
+
+            <ul class="bnb-perks small mt-4 mb-0">
+              <li>Hàng chính hãng, có hóa đơn</li>
+              <li>Miễn phí giao hàng cho đơn từ 300.000đ</li>
+              <li>Đổi trả trong 7 ngày nếu sản phẩm lỗi</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bnb-tabs mt-5">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabDesc"
+                      type="button" role="tab" aria-controls="tabDesc" aria-selected="true">Mô tả</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabInfo"
+                      type="button" role="tab" aria-controls="tabInfo" aria-selected="false">Thông tin sản phẩm</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tabUsageBtn" data-bs-toggle="tab" data-bs-target="#tabUsage"
+                      type="button" role="tab" aria-controls="tabUsage" aria-selected="false">Hướng dẫn sử dụng</button>
+            </li>
+          </ul>
+          <div class="tab-content p-3">
+            <div class="tab-pane fade show active" id="tabDesc" role="tabpanel">
+              <p class="mb-0" id="dDesc"></p>
+            </div>
+            <div class="tab-pane fade" id="tabInfo" role="tabpanel">
+              <table class="table table-sm mb-0 bnb-info-table">
+                <tbody>
+                  <tr><th scope="row">Thương hiệu</th><td id="iBrand"></td></tr>
+                  <tr><th scope="row">Danh mục</th><td id="iCategory"></td></tr>
+                  <tr><th scope="row">Mã sản phẩm</th><td id="iCode"></td></tr>
+                  <tr><th scope="row">Tình trạng</th><td id="iStock"></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="tabUsage" role="tabpanel">
+              <p class="mb-0" id="dUsage"></p>
+              <div id="dIngredientsBox" class="mt-3">
+                <p class="fw-semibold mb-1">Thành phần chính</p>
+                <p class="mb-0" id="dIngredients"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-5">
+          <h2 class="bnb-section-title">Sản phẩm cùng danh mục</h2>
+          <div class="row g-3" id="relatedGrid"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="cartToast" class="toast bnb-toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="cartToastText">Đã thêm vào giỏ hàng</div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Đóng"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/data/products.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
 </html>
