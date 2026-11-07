@@ -4,7 +4,7 @@ Bài tập môn Hệ thống và Công nghệ Web · Đề tài 03: Website gi�
 
 Website tham khảo bố cục của Hasaki (header, thanh menu, card sản phẩm, khu khuyến mãi) nhưng dùng tên và giao diện riêng, không sao chép nguyên mẫu.
 
-**Bản chạy thử:** https://hankhuu07-del.github.io/beautynbeat/
+**LINK:** https://hankhuu07-del.github.io/beautynbeat/
 
 ## Công nghệ
 
