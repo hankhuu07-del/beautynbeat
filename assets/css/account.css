@@ -1,0 +1,854 @@
+.account-page,
+.account-page *,
+.account-page *::before,
+.account-page *::after {
+    box-sizing: border-box;
+}
+
+.account-page {
+    --primary: #56745E;
+    --primary-light: #83A987;
+    --fresh: #A8C84A;
+    --blush: #F1BBC7;
+    --sale: #E55C4B;
+    --sale-dark: #B84E68;
+    --text: #382923;
+    --surface: #F7F6F1;
+    --white: #FFFFFF;
+    --border: #E4E4E4;
+
+    min-height: calc(100vh - 160px);
+    background: var(--surface);
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Container chính */
+
+.account-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(56, 41, 35, 0.10);
+}
+
+.account-container > .account-intro,
+.account-container > .account-form-section {
+    flex: 0 0 50%;
+    min-width: 0;
+}
+
+.account-intro {
+    background: var(--primary);
+    color: var(--white);
+    padding: 65px 55px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Trang trí */
+
+.account-intro::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    opacity: 0.25;
+    top: -100px;
+    right: -80px;
+}
+
+
+.account-intro::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: var(--blush);
+    opacity: 0.15;
+    bottom: -80px;
+    left: -70px;
+}
+
+
+.account-intro-content {
+    position: relative;
+    z-index: 2;
+    max-width: 450px;
+}
+
+
+/* Badge */
+
+.account-badge {
+    display: inline-block;
+    padding: 7px 15px;
+    border: 1px solid var(--primary-light);
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+
+/* Heading */
+
+.account-intro h1 {
+    margin: 0 0 20px;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+/* Description */
+
+.account-intro p {
+    margin: 0 0 35px;
+    color: var(--white);
+    opacity: 0.9;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* Features */
+
+.account-intro-features {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+
+.intro-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+
+.intro-feature-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+.account-form-section {
+    padding: 45px 50px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+
+.account-form-card {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+
+.register-card {
+    max-width: 470px;
+}
+
+
+
+.account-form-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+
+.account-form-label {
+    display: block;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+
+.account-form-header h2 {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+.account-form-header p {
+    margin: 0;
+    color: var(--text);
+    opacity: 0.65;
+    font-size: 14px;
+}
+
+
+.account-message {
+    display: none;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+.account-message.show {
+    display: block;
+}
+
+
+.account-message.success {
+    background: var(--primary-light);
+    color: var(--text);
+}
+
+
+.account-message.error {
+    background: var(--blush);
+    color: var(--sale-dark);
+}
+
+
+.account-message.info {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+
+.form-group label,
+.form-label-row label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.required {
+    color: var(--sale);
+}
+
+
+/* Label + forgot */
+
+.form-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.form-label-row label {
+    margin-bottom: 8px;
+}
+
+
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.account-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 45px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.account-input::placeholder {
+    color: var(--text);
+    opacity: 0.4;
+}
+
+
+.account-input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(131, 169, 135, 0.15);
+}
+
+
+/* Input lỗi */
+
+.account-input.input-error {
+    border-color: var(--sale);
+}
+
+
+.account-input.input-success {
+    border-color: var(--primary);
+}
+
+
+/* Icon */
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    font-size: 16px;
+    z-index: 2;
+}
+
+
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+.password-toggle:hover {
+    color: var(--sale-dark);
+}
+
+
+
+.field-error {
+    display: block;
+    min-height: 18px;
+    margin-top: 5px;
+    color: var(--sale);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+
+.forgot-password {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: var(--primary);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.forgot-password:hover {
+    color: var(--sale-dark);
+    text-decoration: underline;
+}
+
+
+
+.login-options {
+    margin: 2px 0 20px;
+}
+
+
+.remember-option,
+.terms-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+.remember-option input,
+.terms-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* Custom checkbox */
+
+.custom-checkbox {
+    width: 17px;
+    height: 17px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+
+.remember-option input:checked + .custom-checkbox,
+.terms-option input:checked + .custom-checkbox {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+
+.remember-option input:checked + .custom-checkbox::after,
+.terms-option input:checked + .custom-checkbox::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+
+.account-submit-btn {
+    width: 100%;
+    min-height: 48px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.account-submit-btn:hover {
+    background: var(--primary-light);
+    box-shadow: 0 5px 15px rgba(86, 116, 94, 0.2);
+}
+
+
+.account-submit-btn:active {
+    transform: translateY(1px);
+}
+
+
+.account-submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+
+.account-switch {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--text);
+    opacity: 0.75;
+    font-size: 13px;
+}
+
+
+.account-switch a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+.account-switch a:hover {
+    color: var(--sale-dark);
+    text-decoration: underline;
+}
+
+
+
+.terms-group {
+    margin: 5px 0 20px;
+}
+
+
+.terms-option a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+.terms-option a:hover {
+    text-decoration: underline;
+    color: var(--sale-dark);
+}
+
+
+
+.password-strength {
+    height: 3px;
+    width: 0;
+    margin-top: 7px;
+    border-radius: 10px;
+    background: var(--border);
+    transition: width 0.25s ease;
+}
+
+
+.password-strength.weak {
+    width: 33%;
+    background: var(--sale);
+}
+
+
+.password-strength.medium {
+    width: 66%;
+    background: var(--fresh);
+}
+
+
+.password-strength.strong {
+    width: 100%;
+    background: var(--primary);
+}
+
+
+
+
+@media (max-width: 900px) {
+
+    .account-page {
+        padding: 40px 18px;
+    }
+
+
+    .account-container {
+        flex-direction: column;
+        max-width: 600px;
+    }
+
+    .account-container > .account-intro,
+    .account-container > .account-form-section {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+
+    .account-intro {
+        padding: 40px;
+    }
+
+
+    .account-intro h1 {
+        font-size: 34px;
+    }
+
+
+    .account-intro p {
+        margin-bottom: 25px;
+    }
+
+
+    .account-intro-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .account-form-section {
+        padding: 40px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .account-page {
+        padding: 20px 12px;
+    }
+
+
+    .account-container {
+        border-radius: 14px;
+    }
+
+
+    .account-intro {
+        padding: 32px 25px;
+    }
+
+
+    .account-intro h1 {
+        font-size: 29px;
+    }
+
+
+    .account-intro p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+
+    .account-intro-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+
+    .account-form-section {
+        padding: 30px 22px;
+    }
+
+
+    .account-form-header h2 {
+        font-size: 26px;
+    }
+
+
+    .account-input {
+        height: 46px;
+    }
+
+
+    .account-submit-btn {
+        min-height: 46px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+    .account-intro {
+        padding: 28px 20px;
+    }
+
+
+    .account-form-section {
+        padding: 25px 17px;
+    }
+
+
+    .form-label-row {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+/* =========================================================
+   COLOR INPUT - BEAUTY N BEAT
+   Chỉ thêm màu, không thay đổi bố cục
+   ========================================================= */
+
+/* Tiêu đề ĐĂNG NHẬP / ĐĂNG KÝ */
+.account-form-header h2 {
+    color: var(--primary);
+}
+
+/* Nhãn Họ tên, Email, Số điện thoại, Mật khẩu... */
+.account-form label {
+    color: var(--primary);
+}
+
+/* Các ô nhập liệu */
+.account-form input[type="text"],
+.account-form input[type="email"],
+.account-form input[type="tel"],
+.account-form input[type="password"] {
+    background: var(--white);
+    border: 2px solid var(--blush);
+    color: var(--text);
+
+    box-shadow: 0 4px 12px rgba(241, 187, 199, 0.18);
+}
+
+/* Màu chữ gợi ý trong ô */
+.account-form input::placeholder {
+    color: var(--primary-light);
+}
+
+/* Khi rê chuột vào ô */
+.account-form input[type="text"]:hover,
+.account-form input[type="email"]:hover,
+.account-form input[type="tel"]:hover,
+.account-form input[type="password"]:hover {
+    border-color: var(--primary-light);
+
+    box-shadow:
+        0 5px 16px rgba(131, 169, 135, 0.18);
+}
+
+/* Khi bấm vào ô */
+.account-form input[type="text"]:focus,
+.account-form input[type="email"]:focus,
+.account-form input[type="tel"]:focus,
+.account-form input[type="password"]:focus {
+    border-color: var(--primary);
+
+    background: var(--white);
+
+    box-shadow:
+        0 0 0 4px var(--blush),
+        0 7px 18px rgba(86, 116, 94, 0.16);
+}
+
+/* =========================================================
+   ICON TRONG Ô INPUT
+   ========================================================= */
+
+.account-input-wrapper > i {
+    color: var(--primary-light);
+
+    transition: color 0.25s ease;
+}
+
+/* Khi input được focus thì icon đổi màu */
+.account-input-wrapper:focus-within > i {
+    color: var(--sale);
+}
+
+/* =========================================================
+   NÚT HIỆN / ẨN MẬT KHẨU
+   ========================================================= */
+
+.password-toggle {
+    color: var(--primary-light);
+}
+
+.password-toggle:hover {
+    color: var(--sale);
+}
+
+/* =========================================================
+   KHUNG MESSAGE
+   ========================================================= */
+
+.account-message {
+    border-radius: 14px;
+}
+
+/* Thành công */
+.account-message.success {
+    background: var(--fresh);
+    color: var(--primary);
+
+    border: 1px solid var(--primary-light);
+}
+
+/* Lỗi */
+.account-message.error {
+    background: var(--blush);
+    color: var(--sale-dark);
+
+    border: 1px solid var(--sale);
+}
+
+/* =========================================================
+   LỖI TỪNG Ô INPUT
+   ========================================================= */
+
+.field-error {
+    color: var(--sale);
+}
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.account-check input,
+.account-terms input {
+    accent-color: var(--primary);
+}
+
+/* =========================================================
+   LINK QUÊN MẬT KHẨU
+   ========================================================= */
+
+.account-link-button {
+    color: var(--sale-dark);
+}
+
+.account-link-button:hover {
+    color: var(--sale);
+}
+
+/* =========================================================
+   LINK ĐĂNG KÝ / ĐĂNG NHẬP
+   ========================================================= */
+
+.account-bottom a {
+    color: var(--sale-dark);
+}
+
+.account-bottom a:hover {
+    color: var(--primary);
+}
+
+/* =========================================================
+   PASSWORD STRENGTH
+   ========================================================= */
+
+.password-strength-bar {
+    background: var(--border);
+}
+
+.password-strength-fill {
+    background: var(--sale);
+}
+
+.password-strength-text {
+    color: var(--primary);
+}
+
+/* =========================================================
+   CHECKBOX TERMS
+   ========================================================= */
+
+.account-terms a {
+    color: var(--sale-dark);
+}
+
+.account-terms a:hover {
+    color: var(--primary);
+}

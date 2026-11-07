@@ -1,11 +1,140 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sản phẩm | Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>Trang sản phẩm</h1>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm | Beauty N Beat</title>
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="bnb-products py-4">
+    <div class="container">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-3">
+          <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page" id="crumbCurrent">Tất cả sản phẩm</li>
+        </ol>
+      </nav>
+
+      <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+        <div>
+          <h1 class="bnb-page-title mb-1" id="pageTitle">Tất cả sản phẩm</h1>
+          <p class="text-muted small mb-0" id="resultCount">Đang tải sản phẩm...</p>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-outline-secondary btn-sm d-lg-none" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#filterPanel"
+                  aria-expanded="false" aria-controls="filterPanel">
+            Bộ lọc
+          </button>
+          <label for="sortSelect" class="small text-nowrap mb-0">Sắp xếp</label>
+          <select id="sortSelect" class="form-select form-select-sm bnb-sort">
+            <option value="default">Mặc định</option>
+            <option value="price-asc">Giá thấp đến cao</option>
+            <option value="price-desc">Giá cao đến thấp</option>
+            <option value="name-asc">Tên A đến Z</option>
+            <option value="discount">Giảm giá nhiều nhất</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <aside class="col-lg-3">
+          <div class="collapse d-lg-block" id="filterPanel">
+            <div class="bnb-filter">
+
+              <div class="bnb-filter-group">
+                <label for="keywordInput" class="bnb-filter-title">Tìm trong danh sách</label>
+                <input type="text" id="keywordInput" class="form-control form-control-sm"
+                       placeholder="Nhập tên hoặc thương hiệu" autocomplete="off">
+              </div>
+
+              <div class="bnb-filter-group">
+                <p class="bnb-filter-title">Danh mục</p>
+                <div id="categoryList"></div>
+              </div>
+
+              <div class="bnb-filter-group">
+                <p class="bnb-filter-title">Khoảng giá</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="price-all" value="all" checked>
+                  <label class="form-check-label" for="price-all">Tất cả</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="price-1" value="0-200000">
+                  <label class="form-check-label" for="price-1">Dưới 200.000đ</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="price-2" value="200000-500000">
+                  <label class="form-check-label" for="price-2">200.000đ đến 500.000đ</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="price-3" value="500000-0">
+                  <label class="form-check-label" for="price-3">Trên 500.000đ</label>
+                </div>
+              </div>
+
+              <div class="bnb-filter-group">
+                <p class="bnb-filter-title">Thương hiệu</p>
+                <div id="brandList" class="bnb-brand-list"></div>
+              </div>
+
+              <div class="bnb-filter-group">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="onlySale">
+                  <label class="form-check-label" for="onlySale">Đang giảm giá</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="onlyStock">
+                  <label class="form-check-label" for="onlyStock">Còn hàng</label>
+                </div>
+              </div>
+
+              <button type="button" id="resetFilter" class="btn btn-sm bnb-btn-outline w-100">
+                Xóa bộ lọc
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="col-lg-9">
+          <div class="row g-3" id="productGrid"></div>
+
+          <div id="emptyState" class="bnb-empty text-center py-5 d-none">
+            <p class="fw-semibold mb-1">Không có sản phẩm phù hợp</p>
+            <p class="text-muted small mb-3">Thử bỏ bớt điều kiện lọc hoặc đổi từ khóa.</p>
+            <button type="button" class="btn btn-sm bnb-btn" id="emptyReset">Xóa bộ lọc</button>
+          </div>
+
+          <nav aria-label="Phân trang" class="mt-4">
+            <ul class="pagination pagination-sm justify-content-center bnb-pagination" id="pagination"></ul>
+          </nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="cartToast" class="toast bnb-toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="cartToastText">Đã thêm vào giỏ hàng</div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Đóng"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/data/products.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
 </html>

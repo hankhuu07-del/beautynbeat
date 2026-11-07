@@ -1,0 +1,461 @@
+.bnb-products,
+.bnb-detail {
+  color: var(--text);
+}
+
+.bnb-products .breadcrumb a,
+.bnb-detail .breadcrumb a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.bnb-products .breadcrumb a:hover,
+.bnb-detail .breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.bnb-page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.bnb-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-left: .75rem;
+  border-left: 4px solid var(--fresh);
+}
+
+.bnb-btn {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--white);
+  font-weight: 600;
+}
+.bnb-btn:hover,
+.bnb-btn:focus-visible {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  color: var(--white);
+}
+
+.bnb-btn-outline {
+  background: var(--white);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: 600;
+}
+.bnb-btn-outline:hover,
+.bnb-btn-outline:focus-visible {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.bnb-btn:disabled,
+.bnb-btn-outline:disabled {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+  opacity: .6;
+}
+
+.bnb-products :focus-visible,
+.bnb-detail :focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+.bnb-sort {
+  width: auto;
+  min-width: 170px;
+  border-color: var(--border);
+}
+
+.bnb-filter {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.bnb-filter-group {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.bnb-filter-title {
+  display: block;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
+
+.bnb-filter .form-check {
+  margin-bottom: .25rem;
+}
+.bnb-filter .form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.bnb-filter .form-check-input:focus,
+.bnb-filter .form-control:focus,
+.bnb-sort:focus {
+  border-color: var(--primary-light);
+  box-shadow: none;
+  outline: 2px solid var(--primary-light);
+}
+
+.bnb-brand-list {
+  max-height: 210px;
+  overflow-y: auto;
+}
+
+.bnb-count {
+  color: var(--text);
+  opacity: .55;
+  font-size: .8rem;
+}
+
+.bnb-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.bnb-card:hover {
+  border-color: var(--primary-light);
+}
+
+.bnb-card-img {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  overflow: hidden;
+}
+.bnb-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.bnb-card:hover .bnb-card-img img {
+  transform: scale(1.04);
+}
+
+.bnb-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: .75rem;
+}
+
+.bnb-brand {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: .2rem;
+}
+
+.bnb-card-name {
+  font-size: .9rem;
+  line-height: 1.35;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: .5rem;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.7em;
+}
+.bnb-card-name:hover {
+  color: var(--primary);
+}
+
+.bnb-price {
+  color: var(--sale);
+  font-weight: 700;
+}
+.bnb-old-price {
+  color: var(--text);
+  opacity: .5;
+  text-decoration: line-through;
+  font-size: .85rem;
+  margin-left: .35rem;
+}
+
+.bnb-card-price {
+  margin-top: auto;
+  margin-bottom: .6rem;
+}
+
+.bnb-badge-sale,
+.bnb-badge-out {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 2;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+}
+.bnb-badge-sale {
+  background: var(--sale);
+  color: var(--white);
+}
+.bnb-badge-out {
+  left: auto;
+  right: .5rem;
+  background: var(--text);
+  color: var(--white);
+}
+
+.bnb-card.is-out .bnb-card-img img {
+  opacity: .55;
+}
+
+.bnb-card .bnb-add {
+  font-size: .85rem;
+  padding: .35rem .5rem;
+}
+
+.bnb-empty {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+
+.bnb-pagination .page-link {
+  color: var(--primary);
+  border-color: var(--border);
+}
+.bnb-pagination .page-item.active .page-link {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+.bnb-pagination .page-link:hover {
+  background: var(--surface);
+}
+
+.bnb-toast {
+  background: var(--primary);
+  color: var(--white);
+  border: 0;
+}
+.bnb-toast .btn-close {
+  filter: invert(1);
+}
+
+.bnb-detail-img {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.bnb-detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bnb-detail-img .bnb-badge-sale {
+  top: 1rem;
+  left: 1rem;
+  font-size: .9rem;
+}
+
+.bnb-detail-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.bnb-detail-price {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: .75rem 1rem;
+}
+.bnb-detail-price .bnb-price {
+  font-size: 1.6rem;
+}
+.bnb-detail-price .bnb-old-price {
+  font-size: 1rem;
+  margin-left: .6rem;
+}
+
+.bnb-stock-in {
+  color: var(--primary);
+  font-weight: 600;
+}
+.bnb-stock-low {
+  color: var(--sale-dark);
+  font-weight: 600;
+}
+.bnb-stock-out {
+  color: var(--sale);
+  font-weight: 600;
+}
+
+.bnb-qty {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.bnb-qty button {
+  width: 40px;
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.1rem;
+}
+.bnb-qty button:hover:not(:disabled) {
+  background: var(--blush);
+}
+.bnb-qty button:disabled {
+  opacity: .4;
+}
+.bnb-qty input {
+  width: 56px;
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text);
+}
+.bnb-qty input.is-invalid {
+  background: var(--blush);
+}
+
+.bnb-perks {
+  list-style: none;
+  padding: 0;
+}
+.bnb-perks li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: .35rem;
+}
+.bnb-perks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fresh);
+}
+
+.bnb-tabs .nav-link {
+  color: var(--text);
+}
+.bnb-tabs .nav-link.active {
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom-color: var(--white);
+}
+.bnb-tabs .tab-content {
+  border: 1px solid var(--border);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  line-height: 1.7;
+}
+.bnb-tabs #dDesc {
+  max-width: 80ch;
+}
+.bnb-info-table th {
+  width: 35%;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+@media (max-width: 575.98px) {
+  .bnb-page-title { font-size: 1.3rem; }
+  .bnb-detail-name { font-size: 1.25rem; }
+  .bnb-detail-price .bnb-price { font-size: 1.35rem; }
+  .bnb-card-body { padding: .6rem; }
+  .bnb-card .bnb-add { font-size: .8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bnb-card,
+  .bnb-card-img img {
+    transition: none;
+  }
+  .bnb-card:hover .bnb-card-img img {
+    transform: none;
+  }
+}
+
+.bnb-card.card {
+  border-color: var(--border);
+}
+.bnb-card .card-title {
+  font-weight: 400;
+}
+
+.bnb-gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 1.4rem;
+  line-height: 1;
+  opacity: .85;
+}
+.bnb-gallery-nav:hover {
+  opacity: 1;
+  border-color: var(--primary-light);
+}
+.bnb-gallery-nav.prev { left: .75rem; }
+.bnb-gallery-nav.next { right: .75rem; }
+
+.bnb-thumbs {
+  display: flex;
+  gap: .5rem;
+}
+.bnb-thumb {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.bnb-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bnb-thumb.active,
+.bnb-thumb:hover {
+  border-color: var(--primary);
+}
+
+#dCategory {
+  color: var(--primary);
+}

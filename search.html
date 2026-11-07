@@ -1,11 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sản phẩm | Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>Trang sản phẩm</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kết quả tìm kiếm - Beauty N Beat</title>
+  
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+  <!-- Header chờ A vẽ -->
+  <header id="site-header"></header>
+
+  <main class="container py-4">
+    <!-- Search Form -->
+    <section class="search-page-header mb-4">
+      <form id="searchPageForm" class="d-flex gap-2" action="search.html" method="GET">
+        <input type="text" id="searchPageInput" name="q" 
+               class="form-control form-control-lg" 
+               placeholder="Nhập từ khóa tìm kiếm mỹ phẩm, thương hiệu..."
+               autocomplete="off">
+        <button type="submit" class="btn btn-primary-custom px-4 fw-bold">Tìm kiếm</button>
+      </form>
+    </section>
+
+    <!-- Search Info Bar -->
+    <div class="search-info-bar mb-4 p-3 bg-surface rounded border d-flex justify-content-between align-items-center">
+      <p class="m-0 fs-6">
+        Kết quả tìm kiếm cho: <strong id="searchKeywordHeading" class="text-sale">""</strong>
+      </p>
+      <span class="badge bg-secondary"><span id="searchCount">0</span> sản phẩm</span>
+    </div>
+
+    <!-- Search Results -->
+    <div class="row g-2 g-md-3" id="searchResultsContainer">
+      <!-- Render bằng JS -->
+    </div>
+  </main>
+
+  <!-- Footer chờ A vẽ -->
+  <footer id="site-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script> 
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/data/products.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
 </html>

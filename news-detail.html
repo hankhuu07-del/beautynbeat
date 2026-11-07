@@ -1,11 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết tin tức | Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>Chi tiết tin tức</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chi tiết cẩm nang | Beauty N Beat</title>
+
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="assets/css/news.css">
+</head>
+
+<body class="news-page">
+  <!-- Header dùng chung do A phụ trách -->
+  <div id="site-header"></div>
+
+  <main id="news-detail" class="container py-4 py-md-5">
+    <!-- Đường dẫn -->
+    <nav aria-label="Đường dẫn" class="mb-4">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item">
+          <a href="index.html">Trang chủ</a>
+        </li>
+
+        <li class="breadcrumb-item">
+          <a href="news.html">Cẩm nang làm đẹp</a>
+        </li>
+
+        <li id="news-detail-breadcrumb" class="breadcrumb-item active" aria-current="page">Chi tiết bài viết</li>
+      </ol>
+    </nav>
+
+    <!-- Nội dung được news.js lấy từ NEWS theo id trên URL -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10 col-xl-9">
+        <article id="news-detail-content" hidden></article>
+
+        <!-- news.js hiện thông báo khi thiếu id hoặc id sai -->
+        <section id="news-detail-error" class="text-center rounded-4 p-4 p-md-5" role="alert" hidden></section>
+
+        <div class="d-flex justify-content-center justify-content-md-start mt-5 pt-4 border-top">
+          <a href="news.html" class="btn news-reset-button">Quay về cẩm nang</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tối đa 3 bài cùng chủ đề, không gồm bài đang đọc -->
+    <section id="news-related" class="mt-5 pt-4 border-top" aria-labelledby="news-related-title" hidden>
+
+      <h2 id="news-related-title" class="news-section-title mb-4">Bài viết liên quan</h2>
+
+      <div id="news-related-list" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer dùng chung do A phụ trách -->
+  <div id="site-footer"></div>
+
+  <script src="assets/vendor/jquery/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/data/news.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/news.js"></script>
+</body>
+
 </html>

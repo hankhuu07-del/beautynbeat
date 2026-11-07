@@ -1,0 +1,109 @@
+/* ===================================================
+   File CSS riêng của người D - Beauty N Beat
+   Dùng đúng các biến CSS quy định từ common.css
+   =================================================== */
+
+/* Nút chính dùng màu --primary */
+.btn-custom-primary {
+  background-color: var(--primary, #56745E);
+  color: var(--white, #ffffff);
+  border: 1px solid var(--primary, #56745E);
+  transition: all 0.3s ease;
+}
+
+.btn-custom-primary:hover {
+  background-color: var(--primary-light, #83A987);
+  border-color: var(--primary-light, #83A987);
+  color: var(--white, #ffffff);
+}
+
+/* Màu chữ khuyến mãi / giá tiền */
+.text-sale {
+  color: var(--sale, #E55C4B) !important;
+}
+
+/* Khu vực Card tóm tắt */
+.summary-box {
+  background-color: var(--surface, #F7F6F1);
+  border: 1px solid var(--border, #E4E4E4) !important;
+  border-radius: 8px;
+}
+
+/* Ảnh thumbnail trong giỏ hàng */
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border, #E4E4E4);
+  background-color: #fff;
+}
+
+/* Ô điều chỉnh số lượng */
+.qty-control {
+  display: flex;
+  align-items: center;
+  max-width: 120px;
+  border: 1px solid var(--border, #E4E4E4);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.qty-control button {
+  background: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qty-control button:hover {
+  background-color: #eaeaea;
+}
+
+.qty-control input {
+  width: 45px;
+  height: 32px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--border, #E4E4E4);
+  border-right: 1px solid var(--border, #E4E4E4);
+  font-size: 0.95rem;
+}
+
+/* Input form và phản hồi lỗi */
+.form-control:focus {
+  border-color: var(--primary-light, #83A987);
+  box-shadow: 0 0 0 0.2rem rgba(86, 116, 94, 0.25);
+}
+
+.error-feedback {
+  color: var(--sale, #E55C4B);
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.form-control.is-invalid {
+  border-color: var(--sale, #E55C4B);
+}
+
+.checkout-items-scroll {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Cột "Số lượng" trong bảng giỏ hàng (thay cho style= trong cart.html) */
+.col-qty {
+  width: 140px;
+}
+
+/* Tên sản phẩm trong tóm tắt đơn ở checkout (thay cho style= trong cart.js) */
+.checkout-item-name {
+  max-width: 240px;
+}

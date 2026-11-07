@@ -1,11 +1,431 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng ký | Beauty N Beat</title>
-  </head>
-  <body>
-    <h1>Đăng ký</h1>
-  </body>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký - BEAUTY N BEAT</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="assets/vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- CSS chung -->
+    <link rel="stylesheet"
+        href="assets/css/common.css">
+
+    <!-- CSS riêng phần E -->
+    <link rel="stylesheet"
+        href="assets/css/account.css">
+
+</head>
+
+<body>
+
+    <!-- Header chung -->
+    <header id="site-header"></header>
+
+
+    <main class="account-page">
+
+        <div class="account-container row g-0">
+
+            <!-- Phần giới thiệu -->
+            <section class="account-intro col-md-6">
+
+                <div class="account-intro-content">
+
+                    <span class="account-badge">
+                        BEAUTY N BEAT
+                    </span>
+
+                    <h1>
+                        Bắt đầu hành trình<br>
+                        làm đẹp của bạn
+                    </h1>
+
+                    <p>
+                        Tạo tài khoản để khám phá thế giới
+                        mỹ phẩm và chăm sóc bản thân cùng
+                        BEAUTY N BEAT.
+                    </p>
+
+                    <div class="account-intro-features">
+
+                        <div class="intro-feature">
+
+                            <span class="intro-feature-icon">
+                                ✦
+                            </span>
+
+                            <span>
+                                Khám phá sản phẩm yêu thích
+                            </span>
+
+                        </div>
+
+
+                        <div class="intro-feature">
+
+                            <span class="intro-feature-icon">
+                                ♡
+                            </span>
+
+                            <span>
+                                Lưu lại trải nghiệm mua sắm
+                            </span>
+
+                        </div>
+
+
+                        <div class="intro-feature">
+
+                            <span class="intro-feature-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                Mua sắm đơn giản và thuận tiện
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Form đăng ký -->
+            <section class="account-form-section col-md-6">
+
+                <div class="account-form-card register-card">
+
+                    <div class="account-form-header">
+
+                        <span class="account-form-label">
+                            TÀI KHOẢN
+                        </span>
+
+                        <h2>
+                            Tạo tài khoản
+                        </h2>
+
+                        <p>
+                            Điền thông tin để đăng ký
+                        </p>
+
+                    </div>
+
+
+                    <!-- Message -->
+                    <div
+                        id="registerMessage"
+                        class="account-message"
+                        role="alert"
+                        aria-live="polite">
+                    </div>
+
+
+                    <form
+                        id="registerForm"
+                        novalidate>
+
+
+                        <!-- Họ tên -->
+                        <div class="form-group">
+
+                            <label for="registerFullName">
+
+                                Họ và tên
+
+                                <span class="required">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ◎
+                                </span>
+
+                                <input
+                                    type="text"
+                                    id="registerFullName"
+                                    name="fullName"
+                                    class="account-input"
+                                    placeholder="Nhập họ và tên"
+                                    autocomplete="name"
+                                    aria-describedby="registerFullNameError"
+                                    maxlength="80">
+
+                            </div>
+
+                            <small
+                                id="registerFullNameError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="form-group">
+
+                            <label for="registerEmail">
+
+                                Email
+
+                                <span class="required">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    @
+                                </span>
+
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    name="email"
+                                    class="account-input"
+                                    placeholder="example@email.com"
+                                    autocomplete="email"
+                                    aria-describedby="registerEmailError"
+                                    maxlength="100">
+
+                            </div>
+
+                            <small
+                                id="registerEmailError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Số điện thoại -->
+                        <div class="form-group">
+
+                            <label for="registerPhone">
+
+                                Số điện thoại
+
+                                <span class="required">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ☎
+                                </span>
+
+                                <input
+                                    type="tel"
+                                    id="registerPhone"
+                                    name="phone"
+                                    class="account-input"
+                                    placeholder="Nhập số điện thoại"
+                                    autocomplete="tel"
+                                    aria-describedby="registerPhoneError"
+                                    maxlength="15">
+
+                            </div>
+
+                            <small
+                                id="registerPhoneError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Mật khẩu -->
+                        <div class="form-group">
+
+                            <label for="registerPassword">
+
+                                Mật khẩu
+
+                                <span class="required">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ◆
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    name="password"
+                                    class="account-input"
+                                    placeholder="Tối thiểu 6 ký tự"
+                                    autocomplete="new-password"
+                                    aria-describedby="registerPasswordError"
+                                    maxlength="100">
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="registerPassword"
+                                    aria-label="Hiện mật khẩu">
+                                    Hiện
+                                </button>
+
+                            </div>
+
+                            <small
+                                id="registerPasswordError"
+                                class="field-error">
+                            </small>
+
+                            <div
+                                id="passwordStrength"
+                                class="password-strength">
+                            </div>
+
+                        </div>
+
+
+                        <!-- Xác nhận mật khẩu -->
+                        <div class="form-group">
+
+                            <label for="registerConfirmPassword">
+
+                                Xác nhận mật khẩu
+
+                                <span class="required">
+                                    *
+                                </span>
+
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ◆
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="registerConfirmPassword"
+                                    name="confirmPassword"
+                                    class="account-input"
+                                    placeholder="Nhập lại mật khẩu"
+                                    autocomplete="new-password"
+                                    aria-describedby="registerConfirmPasswordError"
+                                    maxlength="100">
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="registerConfirmPassword"
+                                    aria-label="Hiện mật khẩu">
+                                    Hiện
+                                </button>
+
+                            </div>
+
+                            <small
+                                id="registerConfirmPasswordError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Điều khoản -->
+                        <div class="terms-group">
+
+                            <label class="terms-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="agreeTerms"
+                                    aria-describedby="termsError">
+
+                                <span class="custom-checkbox"></span>
+
+                                <span>
+                                    Tôi đồng ý với
+                                    <a href="#"
+                                        id="termsLink">
+                                        điều khoản sử dụng
+                                    </a>
+                                    của BEAUTY N BEAT.
+                                </span>
+
+                            </label>
+
+                            <small
+                                id="termsError"
+                                class="field-error">
+                            </small>
+
+                        </div>
+
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="account-submit-btn">
+                            TẠO TÀI KHOẢN
+                        </button>
+
+
+                        <!-- Login -->
+                        <div class="account-switch">
+
+                            <span>
+                                Đã có tài khoản?
+                            </span>
+
+                            <a href="login.html">
+                                Đăng nhập
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="site-footer"></footer>
+
+
+    <!-- JavaScript -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/common.js"></script>
+
+    <script src="assets/js/account.js"></script>
+
+</body>
+
 </html>
